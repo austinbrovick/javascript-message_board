@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title></title>
+     <link rel='stylesheet' href='/style.css' />
+</head>
+<body>
+    <div id='main_wrapper'>
+        <div id='add_message'>
+          <form action='/message' method='post' id='new_message_form'>
+              <input type='text' name='name' placeholder='name'>
+              <input type='text' name='message' placeholder='message'>
+              <input type='submit' value='message'>
+          </form>
+        </div>
+        <div id='messages_wrapper'>
+
+            <% for (var x in messages) { %>
+              <div class='messages_class'>
+                <ul>
+                  <li><%=messages[x].name %> : <%= messages[x].message %> </li>
+                  <li> <%= messages[x].created_at %> </li>
+                </ul>
+                  <form action='/delete_message/<%= messages[x]._id%>' method='post' class='delete'>
+                    <input type='submit' value='delete'>
+                  </form>
+                  <div class='comments_class'>
+                    <% for (var y in messages[x].comments) { %>
+                      <p><%= messages[x].comments[y].name %> : <%= messages[x].comments[y].comment %> </p>
+                    <% } %>
+                  </div>
+                  <form action='/message/<%= messages[x]._id %>' method='post' class='comment'>
+                    <input type='text' name='name' placeholder='name'>
+                    <input type='text' name='comment' placeholder='comment'>
+                    <input type='submit' value='comment'>
+                  </form>
+
+              </div>
+            <% } %>
+
+
+
+        </div>
+    </div>
+
+
+</body>
+</html>

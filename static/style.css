@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+li {
+  list-style: none;
+  font-size: 18px;
+}
+
+#main_wrapper {
+  width: 700px;
+  margin: 0 auto;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+  height: 100%;
+
+}
+
+#add_message {
+  border: 5px solid black;
+  margin: 20px auto;
+  width: 400px;
+}
+
+#new_message_form {
+  margin: 20px;
+  margin-left: 35px;
+}
+
+.messages_class {
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+}
+ul {
+  margin-left: 30px;
+}
+
+.comments_class {
+  margin-left: 60px;
+}
+
+p {
+  font-size: 16px;
+}
+.delete {
+  margin-left: 30px;
+}
+.comment {
+  margin-left: 75px;
+}
